@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/BaseLayout.astro';
+import CounterHook from "../components/CounterHook";
+import SvelteTodo from "../components/SvelteTodo.svelte";
+import ReactForm from "../components/ReactForm.mdx";
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Astro Samples</title>
+</head>
+<body>
+<Layout>
+  <h1>Welcome to <span class="text-gradient">Astro Samples</span></h1>
+  <article>
+    <h1>Svelte Todo List</h1>
+    <SvelteTodo client:load/>
+  </article>
+  <article>
+    <h1>MDX React Form Component</h1>
+    <ReactForm />
+  </article>
+
+  <CounterHook client:visible/>
+</Layout>
+</body>
+</html>

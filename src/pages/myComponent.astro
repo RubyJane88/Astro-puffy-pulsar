@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/BaseLayout.astro';
+import SvelteTodo from "../components/SvelteTodo.svelte";
+---
+<Layout>
+  <ReactCounter client:load />
+  <div class="mt-4">
+    <SvelteTodo />
+    </div>
+</Layout>

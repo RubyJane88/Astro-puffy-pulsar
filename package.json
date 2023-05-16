@@ -1,5 +1,6 @@
 {
   "name": "puffy-pulsar",
+  "description": "A simple Astro starter template",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,6 +11,28 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.3.0"
+    "@astrojs/mdx": "^0.19.0",
+    "@astrojs/preact": "^2.1.0",
+    "@astrojs/react": "^2.1.1",
+    "@astrojs/sitemap": "^1.2.2",
+    "@astrojs/solid-js": "^2.1.0",
+    "@astrojs/svelte": "^2.1.0",
+    "@astrojs/tailwind": "^3.1.1",
+    "@astrojs/vue": "^2.1.1",
+    "@mdx-js/loader": "^2.3.0",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "astro": "^2.4.5",
+    "axios": "^1.4.0",
+    "marked": "^4.3.0",
+    "preact": "^10.6.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.0.0",
+    "solid-js": "^1.7.3",
+    "svelte": "^3.58.0",
+    "tailwindcss": "^3.3.1",
+    "vite": "^4.3.0",
+    "vue": "^3.2.36"
   }
 }
