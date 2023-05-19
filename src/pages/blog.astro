@@ -1,10 +1,12 @@
 ---
 import Layout from '../layouts/BaseLayout.astro';
 import SvelteTodo from "../components/SvelteTodo.svelte";
+import ReactCounter from "../components/ReactCounter.jsx";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<Layout>
-  <ReactCounter client:load />
+<BaseLayout>
+
   <div class="mt-4">
-    <SvelteTodo />
+
     </div>
-</Layout>
+</BaseLayout>

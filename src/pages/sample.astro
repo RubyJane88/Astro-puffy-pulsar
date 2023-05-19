@@ -3,6 +3,7 @@ import Layout from '../layouts/BaseLayout.astro';
 import CounterHook from "../components/CounterHook";
 import SvelteTodo from "../components/SvelteTodo.svelte";
 import ReactForm from "../components/ReactForm.mdx";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@ import ReactForm from "../components/ReactForm.mdx";
   <title>Astro Samples</title>
 </head>
 <body>
-<Layout>
+<BaseLayout>
   <h1>Welcome to <span class="text-gradient">Astro Samples</span></h1>
   <article>
     <h1>Svelte Todo List</h1>
@@ -24,6 +25,6 @@ import ReactForm from "../components/ReactForm.mdx";
   </article>
 
   <CounterHook client:visible/>
-</Layout>
+</BaseLayout>
 </body>
 </html>
