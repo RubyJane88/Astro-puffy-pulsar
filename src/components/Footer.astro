@@ -1,20 +1,41 @@
 ---
-const { platform, username } = Astro.props
+import Social from "./Social.astro";
 ---
 
+<footer>
+    <Social platform="twitter" username="astrodotbuild" />
+    <Social platform="github" username="withastro" />
+    <Social platform="youtube" username="astrodotbuild" />
+
+    <!--<CounterButton />-->
+
+</footer>
 
 
 <style>
+    * {
+        box-sizing: border-box;
+        margin-top: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
   a {
     background-color: teal;
     color: lightgray;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
-      margin: 10rem 0;
+      margin: 10rem 10rem;
     text-decoration: none;
   }
-
     a:hover {
         color: yellowgreen;
     }
+     .card {
+         display: grid;
+         justify-content: center;
+         align-items: center;
+         text-align: center;
+     }
+
 </style>

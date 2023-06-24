@@ -6,6 +6,7 @@ export interface Props {
 }
 
 const { href, title, body } = Astro.props;
+
 ---
 
 <li class="link-card">
@@ -13,6 +14,7 @@ const { href, title, body } = Astro.props;
 		<h2>
 			{title}
 			<span>&rarr;</span>
+
 		</h2>
 		<p>
 			{body}
@@ -21,16 +23,18 @@ const { href, title, body } = Astro.props;
 </li>
 <style>
 	.link-card {
+	margin: 1rem;
 		list-style: none;
 		display: flex;
 		padding: 0.25rem;
 		background-color: grey;
 		background-image: none;
-		background-size: 400%;
+		background-size:100%;
 		border-radius: 0.6rem;
 		background-position: 100%;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)
+
 	}
 
 	.link-card > a {
@@ -60,4 +64,7 @@ const { href, title, body } = Astro.props;
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent));
 	}
+
+
+
 </style>

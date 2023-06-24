@@ -1,0 +1,44 @@
+---
+import SvelteTodo from "../components/SvelteTodo.svelte";
+import ReactForm from "../components/ReactForm.mdx";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CounterButton from "../components/CounterButton";
+import Card from "../components/Card.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Integrations</title>
+  </head>
+  <body>
+    <BaseLayout>
+        <div class="flex items-center justify-center bg-red-100 rounded-md">
+            <div class="container mx-auto bg-gray text-black p-8 shadow-lg rounded-lg">
+       <h1>Welcome to Astro Integrations</h1>
+       <h2>Here are some examples of integrating with other frameworks</h2>
+       <h3>These are all server-side rendered</h3>
+     </div>
+        </div>
+        <div class="flex items-center justify-center bg-blue-100 rounded-md ">
+        <div class="container mx-auto bg-gray text-black p-8 shadow-lg rounded-lg">
+            <h1>React Component</h1>
+            <h1>Counter Button</h1>
+            <CounterButton />
+        </div>
+            </div>
+
+      <!--<article>-->
+      <!--  <h1>Svelte Todo List</h1>-->
+      <!--  <SvelteTodo client:load />-->
+      <!--</article>-->
+      <!--<article>-->
+      <!--  <h1>MDX React Form Component</h1>-->
+      <!--  <ReactForm />-->
+      <!--</article>-->
+
+    </BaseLayout>
+  </body>
+</html>
