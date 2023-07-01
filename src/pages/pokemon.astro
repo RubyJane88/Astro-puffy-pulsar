@@ -8,7 +8,6 @@ interface PokemonList {
     id: number;
     image: string;
 }
-// Fetch Pokemon data
 const fetchPokemon = async (): Promise<PokemonList[]> => {
     try {
         const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=50');

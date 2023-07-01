@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ReactCounter() {
+const ReactCounter = () => {
   const [count, setCount] = useState(0);
 
   return (
@@ -21,6 +21,6 @@ function ReactCounter() {
       </button>
     </div>
   );
-}
+};
 
 export default ReactCounter;
