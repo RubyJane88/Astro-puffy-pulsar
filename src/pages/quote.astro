@@ -3,10 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Quotes from "../components/Quotes.tsx";
 
 
-const {pageTitle} = "Daily Quotes"
+const pageTitle = "Daily Quotes"
 
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <Quotes client:visible={true}
+    <Quotes client:only="react"
             quotes={["YOLO: You live only once", "FOMO: Fear of Missing Out", "ad astra per aspera"]}/>
 </BaseLayout>

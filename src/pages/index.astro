@@ -29,7 +29,7 @@ const cards = [
             {
                 cards.map(({ href, title, body, src, alt, width, height }) => (
                     <>
-                        <Card href={href} title={title} body={body} />
+                        <Card href={href} title={title} body={body} summary="" />
                         <div class="image-container">
                             <img src={src} width={width} height={height} />
                         </div>
