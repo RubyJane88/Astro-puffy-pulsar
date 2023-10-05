@@ -1,13 +1,28 @@
 ---
-date: 2023-01-11
-category: [code]
-title: Code Snippets and Examples
-summary: An example of a code snippet
+date: 
+title: Code Run Through and Examples
+categories: ["Code"]
+summary: A Daily Code Snippet to Keep the Doctor Away
+image: "./code.jpeg"
+slug: "code"
+height: 400
+width: 400
 ---
 
+Code Run Through and Examples
 
-# Code Snippets and Examples
+Automatic Integration Setup
+Section titled Automatic Integration Setup
+Astro includes an astro add command to automate the setup of integrations.
 
-#Here is the start of your content
+Run the astro add command using the package manager of your choice and our automatic integration wizard will update your configuration file and install any necessary dependencies.
 
+Using Integrations
+Section titled Using Integrations
+Astro integrations are always added through the integrations property in your astro.config.mjs file.
 
+There are three common ways to import an integration into your Astro project:
+
+Installing an npm package integration.
+Import your own integration from a local file inside your project.
+Write your integration inline, directly in your config file.

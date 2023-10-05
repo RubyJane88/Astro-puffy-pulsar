@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import axios from 'axios';
-import PokemonList from "../components/PokemonList";
+
 
 interface PokemonList {
     name: string;
@@ -11,7 +11,9 @@ interface PokemonList {
 const fetchPokemon = async (): Promise<PokemonList[]> => {
     try {
         const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=50');
-        const pokemon = response.data.results.map((pokemon, index) => {
+        const pokemon = response.data?.results?.map((pokemon, index) => {
+            //This is server-side code, so it will not be included in the client bundle
+            console.log(JSON.stringify(pokemon, null, 2))
             const { name } = pokemon;
             const id = index + 1;
             const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;

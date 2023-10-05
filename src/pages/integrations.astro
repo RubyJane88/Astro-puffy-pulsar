@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import SvelteTodo from "../components/SvelteTodo.svelte";
-import CounterButton from "../components/CounterButton";
 import ReactCounter from "../components/ReactCounter";
 ---
 
@@ -30,7 +29,7 @@ import ReactCounter from "../components/ReactCounter";
         <div class="flex items-center justify-center bg-blue-100 rounded-md ">
         <div class="container mx-auto bg-gray text-black p-8 shadow-lg rounded-lg">
 
-            <ReactCounter />
+            <ReactCounter client:visible />
         </div>
             </div>
 

@@ -3,6 +3,9 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import '../styles/global.css'
 
+import { ViewTransitions } from 'astro:transitions';
+
+
 const {pageTitle} = Astro.props;
 ---
 <!DOCTYPE html>
@@ -12,7 +15,11 @@ const {pageTitle} = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+
+		<ViewTransitions />
+
 		<title>{pageTitle}</title>
+
 	</head>
 	<body>
 	<Header />
@@ -30,6 +37,13 @@ const {pageTitle} = Astro.props;
 	:root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--accent-rgb: rgb(var(--accent));
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		margin: 0;
+		justify-content: center;
+		align-items: center;
 	}
 	html {
 		font-family: system-ui, sans-serif;

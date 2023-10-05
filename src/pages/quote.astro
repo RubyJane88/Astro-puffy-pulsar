@@ -7,6 +7,6 @@ const {pageTitle} = "Daily Quotes"
 
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <Quotes client:load
+    <Quotes client:visible={true}
             quotes={["YOLO: You live only once", "FOMO: Fear of Missing Out", "ad astra per aspera"]}/>
 </BaseLayout>

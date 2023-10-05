@@ -1,20 +1,22 @@
-
 ---
-{/*Front matter is used to store metadata about a page.
-It’s written at the top of the page and surrounded by three dashes (---).
-Typically written in YAML, front matter can also be written in JSON or TOML, depending on your preference of SSG
- */}
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout>
-
-    <div class="mt-4">
-        <h1 class="text-2xl font-bold"></h1>
-        <h2>This is my Page</h2>
-        <script>
-            window.onload = function() {
-                alert('Esta es mi página');
-            };
-        </script>
+<main>
+    <div>
+        <button style="background-color: lightskyblue; width: 5rem; height: 2rem; border-radius: 1rem" class="alert">Click me!</button>
     </div>
+
+    <script>
+        const buttons = document.querySelectorAll('button.alert');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                alert('Здраво Армадајс! Како си?');
+            });
+        });
+    </script>
+</main>
+
 </BaseLayout>
+

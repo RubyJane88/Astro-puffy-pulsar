@@ -3,9 +3,10 @@ export interface Props {
 	title: string;
 	body: string;
 	href: string;
+	summary: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, summary } = Astro.props;
 
 ---
 
@@ -19,6 +20,8 @@ const { href, title, body } = Astro.props;
 		<p>
 			{body}
 		</p>
+		<p>
+			{summary} </p>
 	</a>
 </li>
 <style>
