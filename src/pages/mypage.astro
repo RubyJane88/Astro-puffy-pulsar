@@ -1,22 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
+
 <BaseLayout>
-<main>
+  <main>
     <div>
-        <button style="background-color: lightskyblue; width: 5rem; height: 2rem; border-radius: 1rem" class="alert">Click me!</button>
+      <button
+        style="background-color: lightskyblue; width: 5rem; height: 2rem; border-radius: 1rem"
+        class="alert">Click me!</button
+      >
     </div>
 
     <script>
-        const buttons = document.querySelectorAll('button.alert');
+      const buttons = document.querySelectorAll("button.alert");
 
-        buttons.forEach((button) => {
-            button.addEventListener('click', () => {
-                alert('Здраво Армадајс! Како си?');
-            });
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          alert("Здраво Армадајс! Како си?");
         });
+      });
     </script>
-</main>
-
+  </main>
 </BaseLayout>
-

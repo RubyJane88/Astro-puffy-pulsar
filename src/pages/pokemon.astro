@@ -1,169 +1,172 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import axios from 'axios';
+import axios from "axios";
 
 interface PokemonList {
-    name: string;
-    id: number;
-    image: string;
+  name: string;
+  id: number;
+  image: string;
 }
 const fetchPokemon = async () => {
-    try {
-        const response = await axios.get<{ results: PokemonList[] }>(
-            "https://pokeapi.co/api/v2/pokemon?limit=50"
-        );
-        const pokemon = response.data?.results?.map((pokemon, index) => {
-            //This is server-side code, so it will not be included in the client bundle
-            console.log(JSON.stringify(pokemon, null, 2));
-            const { name } = pokemon;
-            const id = index + 1;
-            const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+  try {
+    const response = await axios.get<{ results: PokemonList[] }>(
+      "https://pokeapi.co/api/v2/pokemon?limit=50"
+    );
+    const pokemon = response.data?.results?.map((pokemon, index) => {
+      //This is server-side code, so it will not be included in the client bundle
+      console.log(JSON.stringify(pokemon, null, 2));
+      const { name } = pokemon;
+      const id = index + 1;
+      const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
-            return { name, id, image };
-        });
+      return { name, id, image };
+    });
 
-        return pokemon;
-    } catch (error) {
-        console.error(`Failed to fetch Pokemon: ${error}`);
-    }
+    return pokemon;
+  } catch (error) {
+    console.error(`Failed to fetch Pokemon: ${error}`);
+  }
 };
 
 const pokemon = await fetchPokemon();
-
 ---
 
 <BaseLayout title="This is the Pokemon API">
-    <main>
-        <h1 class="text-gradient mb-4">Pokemon API</h1>
-        <p class="text-gray-50">
-            This is a simple example of how to fetch data from Pokemon API using Astro.  </p>
-        <div class="container">
-            <ul>
-                {pokemon.map(({ name, id, image }) => (
-                        <li key={id} class="card">
-                            <img class="card-image" src={image} alt={name} />
-                            <h2 class="card-title">{name}</h2>
-                        </li>
-                ))}
-            </ul>
-        </div>
-    </main>
+  <main>
+    <h1 class="text-gradient mb-4">Pokemon API</h1>
+    <p class="text-gray-50">
+      This is a simple example of how to fetch data from Pokemon API using
+      Astro.
+    </p>
+    <div class="container">
+      <ul>
+        {
+          pokemon.map(({ name, id, image }) => (
+            <li key={id} class="card">
+              <img class="card-image" src={image} alt={name} />
+              <h2 class="card-title">{name}</h2>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </main>
 
-     <!--<PokemonList client:visible />-->
+  <!--<PokemonList client:visible />-->
 </BaseLayout>
 
 <style>
-    main {
-        margin: auto;
-        padding: 1.5rem;
-        max-width: 60rem;
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60rem;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+
+  body {
+    margin: 0;
+    font-family: rubik;
+  }
+
+  .container {
+    padding: 3.125rem;
+    margin: 0 auto;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3.375rem;
+  }
+
+  #pokedex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 1.25rem;
+    padding-inline-start: 0;
+  }
+
+  .card {
+    list-style: none;
+    padding: 1.5rem;
+    background-color: lightblue;
+    color: #222;
+    text-align: center;
+    margin-bottom: 1.875rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
+    justify-content: center;
+  }
+
+  .card:hover {
+    animation: bounce 0.5s linear;
+  }
+
+  .card-title {
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    font-weight: normal;
+  }
+  .card-subtitle {
+    margin-top: 0.3125rem;
+    color: #ffffff;
+    font-weight: lighter;
+  }
+
+  .card-image {
+    height: max-content;
+  }
+
+  @keyframes bounce {
+    20% {
+      transform: translateY(-0.375rem);
     }
-    h1 {
-        font-size: 3rem;
-        font-weight: 800;
-        margin: 0;
-    }
-    .text-gradient {
-        background-image: var(--accent-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 400%;
-        background-position: 0;
-    }
-    .instructions {
-        line-height: 1.6;
-        margin: 1rem 0;
-        border: 1px solid rgba(var(--accent), 25%);
-        padding: 1rem;
-        border-radius: 0.4rem;
-    }
-    .instructions code {
-        font-size: 0.875em;
-        font-weight: bold;
-        background: rgba(var(--accent), 12%);
-        color: rgb(var(--accent));
-        border-radius: 4px;
-        padding: 0.3em 0.45em;
-    }
-    .instructions strong {
-        color: rgb(var(--accent));
-    }
-    .link-card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-        gap: 1rem;
-        padding: 0;
+    40% {
+      transform: translateY(0rem);
     }
 
-    body {
-        margin: 0;
-        font-family: rubik;
+    80% {
+      transform: translateY(-0.125rem);
     }
-
-    .container {
-        padding: 3.125rem;
-        margin: 0 auto;
+    100% {
+      transform: translateY(0);
     }
-
-    h1 {
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 3.375rem;
-    }
-
-    #pokedex {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-        grid-gap: 1.25rem;
-        padding-inline-start: 0;
-    }
-
-    .card {
-        list-style: none;
-        padding: 1.5rem;
-        background-color: lightblue;
-        color: #222;
-        text-align: center;
-        margin-bottom: 1.875rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 2rem;
-        justify-content: center;
-    }
-
-    .card:hover {
-        animation: bounce 0.5s linear;
-    }
-
-    .card-title {
-        text-transform: capitalize;
-        font-size: 1.25rem;
-        font-weight: normal;
-    }
-    .card-subtitle {
-        margin-top: 0.3125rem;
-        color: #ffffff;
-        font-weight: lighter;
-    }
-
-    .card-image {
-        height: max-content;
-    }
-
-    @keyframes bounce {
-        20% {
-            transform: translateY(-0.375rem);
-        }
-        40% {
-            transform: translateY(0rem);
-        }
-
-        80% {
-            transform: translateY(-0.125rem);
-        }
-        100% {
-            transform: translateY(0);
-        }
-    }
+  }
 </style>

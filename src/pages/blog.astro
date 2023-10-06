@@ -6,26 +6,26 @@ const blogCollections = await getCollection("blog");
 ---
 
 <BaseLayout title="Content Collections">
-    <div class="mt-10">
-        <h1 class="text-2xl font-bold">Content Collections @Astro 2.0</h1>
-        {
-            blogCollections.map((blog) => {
-                return (
-                    <div class="mt-10">
-                        <p>{blog.data.date}</p>
-                        <h1>{blog.data.title}</h1>
-                        <p>{blog.data.description}</p>
-                        <p>{blog.data.summary}</p>
-                        <p>Category: {blog.slug}</p>
-                        <div>
-                            <img src={blog.data.image} alt="blog image" />
-                        </div>
-                        <article class="m-10">
-                            <span>{blog.body}</span>
-                        </article>
-                    </div>
-                );
-            })
-        }
-    </div>
+  <div class="mt-10">
+    <h1 class="text-2xl font-bold">Content Collections @Astro 2.0</h1>
+    {
+      blogCollections.map((blog) => {
+        return (
+          <div class="mt-10">
+            <p>{blog.data.date}</p>
+            <h1>{blog.data.title}</h1>
+            <p>{blog.data.description}</p>
+            <p>{blog.data.summary}</p>
+            <p>Category: {blog.slug}</p>
+            <div>
+              <img src={blog.data.image} alt="blog image" />
+            </div>
+            <article class="m-10">
+              <span>{blog.body}</span>
+            </article>
+          </div>
+        );
+      })
+    }
+  </div>
 </BaseLayout>

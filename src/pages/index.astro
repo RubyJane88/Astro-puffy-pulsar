@@ -4,47 +4,47 @@ import Card from "../components/Card.astro";
 const { pageTitle }: any = "Astro Home";
 
 const cards = [
-    {
-        href: "https://docs.astro.build2",
-        title: "Sasuke",
-        body: "Sasuke Uchiha (うちはサスケ, Uchiha Sasuke) is one of the last surviving members of Konohagakures Uchiha clan. After his older brother, Itachi, slaughtered ..",
-        src: "/sasuke.webp",
-        width: 300,
-        height: 300,
-    },
-    {
-        href: "https://docs.astro.build3",
-        title: "Boruto",
-        body: "Boruto is a spin-off and a sequel to Kishimoto's Naruto, which follows the exploits of Naruto Uzumaki's son, Boruto Uzumaki, and his ninja team. Boruto: Naruto ...",
-        src: "/naruto-1.jpeg",
-        width: 300,
-        height: 300,
-    },
+  {
+    href: "https://docs.astro.build2",
+    title: "Sasuke",
+    body: "Sasuke Uchiha (うちはサスケ, Uchiha Sasuke) is one of the last surviving members of Konohagakures Uchiha clan. After his older brother, Itachi, slaughtered ..",
+    src: "/sasuke.webp",
+    width: 300,
+    height: 300,
+  },
+  {
+    href: "https://docs.astro.build3",
+    title: "Boruto",
+    body: "Boruto is a spin-off and a sequel to Kishimoto's Naruto, which follows the exploits of Naruto Uzumaki's son, Boruto Uzumaki, and his ninja team. Boruto: Naruto ...",
+    src: "/naruto-1.jpeg",
+    width: 300,
+    height: 300,
+  },
 ];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <main>
-        <ul role="list" class="link-card-grid">
-            {
-                cards.map(({ href, title, body, src, alt, width, height }) => (
-                    <>
-                        <Card href={href} title={title} body={body} summary="" />
-                        <div class="image-container">
-                            <img src={src} width={width} height={height} />
-                        </div>
-                    </>
-                ))
-            }
-        </ul>
-    </main>
+  <main>
+    <ul role="list" class="link-card-grid">
+      {
+        cards.map(({ href, title, body, src, width, height }) => (
+          <>
+            <Card href={href} title={title} body={body} summary="" />
+            <div class="image-container">
+              <img src={src} width={width} height={height} />
+            </div>
+          </>
+        ))
+      }
+    </ul>
+  </main>
 
-    <style>
-        .image-container {
-            display: grid;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-    </style>
+  <style>
+    .image-container {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  </style>
 </BaseLayout>

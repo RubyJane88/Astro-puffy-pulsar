@@ -14,31 +14,37 @@ import ReactCounter from "../components/ReactCounter";
   </head>
   <body>
     <BaseLayout>
-        <div class="flex items-center justify-center bg-red-100 rounded-md">
-            <div class="container mx-auto bg-gray text-black p-8 shadow-lg rounded-lg">
-                <div class="flex items-center justify-center">
-                    <div class="text-black p-8 rounded-lg">
-                        <h1 class="text-2xl font-bold mb-4">Welcome to Astro Integrations</h1>
-                        <h2 class="text-1xl font-semibold mb-3">Here are some examples of integrating with other frameworks</h2>
-                        <h3 class="font-medium mb-2">These are all server-side rendered</h3>
-                        <!-- Other content goes here -->
-                    </div>
-                </div>
-     </div>
-        </div>
-        <div class="flex items-center justify-center bg-blue-100 rounded-md ">
-        <div class="container mx-auto bg-gray text-black p-8 shadow-lg rounded-lg">
-
-            <ReactCounter client:only="react"/>
-
-        </div>
+      <div class="flex items-center justify-center bg-red-100 rounded-md">
+        <div
+          class="container mx-auto bg-gray text-black p-8 shadow-lg rounded-lg"
+        >
+          <div class="flex items-center justify-center">
+            <div class="text-black p-8 rounded-lg">
+              <h1 class="text-2xl font-bold mb-4">
+                Welcome to Astro Integrations
+              </h1>
+              <h2 class="text-1xl font-semibold mb-3">
+                Here are some examples of integrating with other frameworks
+              </h2>
+              <h3 class="font-medium mb-2">
+                These are all server-side rendered
+              </h3>
+              <!-- Other content goes here -->
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center justify-center bg-blue-100 rounded-md">
+        <div
+          class="container mx-auto bg-gray text-black p-8 shadow-lg rounded-lg"
+        >
+          <ReactCounter client:only="react" />
+        </div>
+      </div>
 
       <article>
         <SvelteTodo client:load />
       </article>
-
-
     </BaseLayout>
   </body>
 </html>
